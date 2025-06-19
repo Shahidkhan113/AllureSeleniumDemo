@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-13T14:49:35 PKT" name="Default suite" finished-at="2025-06-13T14:49:45 PKT" duration-ms="9162">
+  <suite started-at="2025-06-19T15:12:34 PKT" name="Default suite" finished-at="2025-06-19T15:13:09 PKT" duration-ms="35128">
     <groups>
     </groups>
-    <test started-at="2025-06-13T14:49:35 PKT" name="Default test" finished-at="2025-06-13T14:49:45 PKT" duration-ms="9162">
-      <class name="TestPackage.TestClass">
-        <test-method is-config="true" signature="setup()[pri:0, instance:TestPackage.TestClass@77f80c04]" started-at="2025-06-13T14:49:35 PKT" name="setup" finished-at="2025-06-13T14:49:40 PKT" duration-ms="4605" status="PASS">
+    <test started-at="2025-06-19T15:12:34 PKT" name="Default test" finished-at="2025-06-19T15:13:09 PKT" duration-ms="35128">
+      <class name="TestPackage.LoginScenarios">
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestPackage.LoginScenarios@1ebea008]" started-at="2025-06-19T15:12:34 PKT" name="setup" finished-at="2025-06-19T15:12:56 PKT" duration-ms="21923" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginWithExplicitWaitAndReport()[pri:0, instance:TestPackage.TestClass@77f80c04]" started-at="2025-06-13T14:49:40 PKT" name="loginWithExplicitWaitAndReport" finished-at="2025-06-13T14:49:45 PKT" duration-ms="4487" status="PASS">
+        <test-method signature="runLoginScenarios()[pri:0, instance:TestPackage.LoginScenarios@1ebea008]" started-at="2025-06-19T15:12:56 PKT" name="runLoginScenarios" finished-at="2025-06-19T15:13:09 PKT" duration-ms="12883" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginWithExplicitWaitAndReport -->
-      </class> <!-- TestPackage.TestClass -->
+        </test-method> <!-- runLoginScenarios -->
+      </class> <!-- TestPackage.LoginScenarios -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestPackage.TestClass">
+      <class name="TestPackage.TpLogin">
         <methods>
-          <include name="setupReportAndBrowser"/>
-          <include name="runTest"/>
+          <include name="setup"/>
+          <include name="CoDash_LoginPage"/>
         </methods>
-      </class> <!-- TestPackage.TestClass -->
+      </class> <!-- TestPackage.TpLogin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
