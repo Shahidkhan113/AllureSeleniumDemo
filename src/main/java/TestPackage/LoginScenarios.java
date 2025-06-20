@@ -22,7 +22,7 @@ public class LoginScenarios extends TestBasetp {
 
     @BeforeTest
     public void setup() {
-        ExtentSparkReporter reporter = new ExtentSparkReporter("CoDashLoginReport.html");
+        ExtentSparkReporter reporter = new ExtentSparkReporter("TestCoDashLoginReport.html");
         extent = new ExtentReports();
         extent.attachReporter(reporter);
 

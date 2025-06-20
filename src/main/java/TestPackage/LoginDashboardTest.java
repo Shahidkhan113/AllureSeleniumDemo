@@ -1,7 +1,5 @@
 package TestPackage;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
 import PagesObjectModel.LoginPage;
@@ -10,11 +8,8 @@ import PagesObjectModel.DashboardPage;
 import com.aventstack.extentreports.*;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+public class LoginDashboardTest extends TestBasetp {
 
-public class LoginDashboardTest {
-
-    WebDriver driver;
     LoginPage loginPage;
     DashboardPage dashboardPage;
 
@@ -31,14 +26,9 @@ public class LoginDashboardTest {
 
     @BeforeMethod
     public void setupBrowser() throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        
-        //test.info("Browser launched");
-        driver.manage().window().maximize();
-        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-        Thread.sleep(3000); // wait for page load
-        test.info("Navigated to login page");
+        initializeBrowser(); // ✅ method from TestBasetp
+        test.info("Browser launched and navigated to login page");
+        Thread.sleep(3000);
     }
 
     @Test
@@ -59,7 +49,6 @@ public class LoginDashboardTest {
             test.fail("Dashboard not visible after login");
         }
 
-        // Perform logout
         dashboardPage.clickProfileIcon();
         Thread.sleep(1000);
         dashboardPage.clickLogout();
@@ -74,8 +63,8 @@ public class LoginDashboardTest {
 
     @AfterMethod
     public void closeBrowser() {
-        //driver.quit();
-        //test.info("Browser closed");
+        driver.quit();
+        test.info("Browser closed");
     }
 
     @AfterTest

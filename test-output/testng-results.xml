@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-19T15:12:34 PKT" name="Default suite" finished-at="2025-06-19T15:13:09 PKT" duration-ms="35128">
+  <suite started-at="2025-06-20T10:57:39 PKT" name="Default suite" finished-at="2025-06-20T10:58:08 PKT" duration-ms="29419">
     <groups>
     </groups>
-    <test started-at="2025-06-19T15:12:34 PKT" name="Default test" finished-at="2025-06-19T15:13:09 PKT" duration-ms="35128">
+    <test started-at="2025-06-20T10:57:39 PKT" name="Default test" finished-at="2025-06-20T10:58:08 PKT" duration-ms="29419">
       <class name="TestPackage.LoginScenarios">
-        <test-method is-config="true" signature="setup()[pri:0, instance:TestPackage.LoginScenarios@1ebea008]" started-at="2025-06-19T15:12:34 PKT" name="setup" finished-at="2025-06-19T15:12:56 PKT" duration-ms="21923" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestPackage.LoginScenarios@1ebea008]" started-at="2025-06-20T10:57:39 PKT" name="setup" finished-at="2025-06-20T10:57:55 PKT" duration-ms="16873" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="runLoginScenarios()[pri:0, instance:TestPackage.LoginScenarios@1ebea008]" started-at="2025-06-19T15:12:56 PKT" name="runLoginScenarios" finished-at="2025-06-19T15:13:09 PKT" duration-ms="12883" status="PASS">
+        <test-method signature="runLoginScenarios()[pri:0, instance:TestPackage.LoginScenarios@1ebea008]" started-at="2025-06-20T10:57:55 PKT" name="runLoginScenarios" finished-at="2025-06-20T10:58:08 PKT" duration-ms="12345" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runLoginScenarios -->

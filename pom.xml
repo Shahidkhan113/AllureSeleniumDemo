@@ -3,70 +3,69 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>SeleniumExtentReport</groupId>
-    <artifactId>SeleniumExtentReport</artifactId>
-    <version>1.0</version>
-    <packaging>jar</packaging>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>SeleniumExtentReport</groupId>
+  <artifactId>SeleniumExtentReport</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
 
-    <name>SeleniumExtentReport</name>
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 
-    <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
+  <dependencies>
+    <!-- ✅ Selenium WebDriver -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>4.20.0</version>
+    </dependency>
 
-    <dependencies>
-        <!-- Selenium -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>4.20.0</version>
-        </dependency>
+    <!-- ✅ TestNG -->
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>7.9.0</version>
+      <scope>test</scope>
+    </dependency>
 
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>5.7.0</version>
-        </dependency>
+    <!-- ✅ Allure TestNG Integration -->
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-testng</artifactId>
+      <version>2.24.0</version>
+    </dependency>
+    <!-- WebDriverManager -->
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.7.0</version>
+</dependency>
 
-        <dependency>
-            <groupId>com.aventstack</groupId>
-            <artifactId>extentreports</artifactId>
-            <version>5.1.1</version>
-        </dependency>
+    <!-- ✅ Extent Reports -->
+    <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>5.1.1</version>
+    </dependency>
+  </dependencies>
 
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.10.2</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- ✅ Gson (required by ExtentReports) -->
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.10.1</version>
-        </dependency>
-
-        <!-- ✅ Allure Report for TestNG -->
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-testng</artifactId>
-            <version>2.21.0</version>
-        </dependency>
-    </dependencies>
-
-    <!-- ✅ Allure Maven Plugin -->
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-maven</artifactId>
-                <version>2.11.2</version>
-            </plugin>
-        </plugins>
-    </build>
+  <build>
+    <plugins>
+      <!-- ✅ Surefire Plugin (TestNG Runner) -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M8</version>
+        <configuration>
+          <includes>
+            <include>**/*Test.java</include>
+          </includes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
