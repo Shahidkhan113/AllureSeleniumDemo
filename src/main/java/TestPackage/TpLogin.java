@@ -31,7 +31,7 @@ public class TpLogin extends TestBasetp {
     @Test
     public void CoDash_LoginPage() throws InterruptedException {
         String incorrectEmail = "muhammad.shakeel2@veroke.sa";
-        String correctEmail = "muhammad.shakeel@veroke.sa";
+        String correctEmail = "muhammad.shakeel@abc.com";
         String incorrectPassword = "123321";
         String correctPassword = "123123";
 
@@ -107,7 +107,7 @@ public class TpLogin extends TestBasetp {
         }
 
         //Final URL Check after OTP
-        Thread.sleep(3000); // Wait for redirect
+        Thread.sleep(5000); // Wait for redirect
         String finalURL = driver.getCurrentUrl();
 
         if (!finalURL.contains("auth/login")) {

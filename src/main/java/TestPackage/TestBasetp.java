@@ -1,25 +1,21 @@
 package TestPackage;
 
-import java.time.Duration;
-
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import java.time.Duration;
 
 public class TestBasetp {
-
     public static WebDriver driver;
+    public static WebDriverWait wait;
 
     public void initializeBrowser() {
-        try {
-            WebDriverManager.chromedriver().setup(); // ✅ Setup latest ChromeDriver
-            driver = new ChromeDriver();              // ✅ Launch Chrome
-            driver.manage().window().maximize();      // ✅ Maximize browser
-            driver.get("http://company-staging.thriftplan.com.sa/#/auth/login"); // ✅ Your app URL
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));   // ✅ Implicit Wait
-        } catch (Exception e) {
-            e.printStackTrace(); // Show any error in console
-        }
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        driver.manage().window().maximize();
+        driver.get("https://dev-admin.wareed.com.sa/#/home/login");
     }
 }

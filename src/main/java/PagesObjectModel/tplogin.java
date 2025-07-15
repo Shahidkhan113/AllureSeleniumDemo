@@ -1,5 +1,6 @@
 package PagesObjectModel;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,6 +31,12 @@ public class tplogin {
 
     @FindBy(xpath = "//button[@type='button']")
     WebElement okButton;
+    
+    // OTP boxes
+    public void enterOTP(int index, String digit) {
+        WebElement otpBox = driver.findElement(By.xpath("//ng-otp-input/div/input[" + index + "]"));
+        otpBox.sendKeys(digit);
+    }
 
     // Actions
     public void enterEmail(String email) {
@@ -53,4 +60,5 @@ public class tplogin {
     public void clickOkButton() {
         okButton.click();
     }
+    
 }

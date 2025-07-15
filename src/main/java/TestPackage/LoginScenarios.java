@@ -10,15 +10,17 @@ import com.aventstack.extentreports.*;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import PagesObjectModel.tplogin;
+import PagesObjectModel.AdvancedActions;
 import io.qameta.allure.testng.AllureTestNg;
 
-@Listeners({AllureTestNg.class})  // ✅ Allure listener added
+@Listeners({AllureTestNg.class})  //  Allure listener added
 public class LoginScenarios extends TestBasetp {
 
-	String[] arrtOTP_CoDash = {"0", "1", "0", "1", "0", "1"};
+    String[] arrtOTP_CoDash = {"0", "1", "0", "1", "0", "1"};
     ExtentReports extent;
     ExtentTest test;
     tplogin loginPage;
+    AdvancedActions actions;
 
     @BeforeTest
     public void setup() {
@@ -28,16 +30,17 @@ public class LoginScenarios extends TestBasetp {
 
         test = extent.createTest("ThriftPlan Company Dashboard Login Test");
 
-        initializeBrowser(); // Opens browser and URL
-        loginPage = new tplogin(driver); // Page object created
+        initializeBrowser(); // Browser open
+        loginPage = new tplogin(driver); // Page Object
+        actions = new AdvancedActions(driver); // ✅ Your custom Actions helper
     }
 
     @Test
     public void runLoginScenarios() throws InterruptedException {
         String[][] testData = {
-            {"muhammad.shakeel2@veroke.sa", "123123", "Invalid Email"},
-            {"muhammad.shakeel@veroke.sa", "123321", "Invalid Password"},
-            {"muhammad.shakeel@veroke.sa", "123123", "Valid Login"}
+            {"muhammad.shakeel1@abc.com", "123123", "Invalid Email"},
+            {"muhammad.shakeel@abc.com", "123321", "Invalid Password"},
+            {"muhammad.shakeel@abc.com", "123123", "Valid Login"}
         };
 
         for (int i = 0; i < testData.length; i++) {
@@ -51,15 +54,20 @@ public class LoginScenarios extends TestBasetp {
             if (caseType.equals("Valid Login")) {
                 try {
                     WebElement eyeIcon = driver.findElement(By.xpath("//mat-icon[contains(text(),'visibility')]"));
-                    eyeIcon.click();
+
+                    // ✅ Use your reusable AdvancedActions class
+                    actions.mouseHover(eyeIcon);
+                    eyeIcon.click(); // simple click after hover
+
                     String fieldType = driver.findElement(By.xpath("//input[@type='password' or @type='text']")).getAttribute("type");
+
                     if (fieldType.equals("text")) {
-                        test.pass("Password is visible after clicking eye icon.");
+                        test.pass("Password is visible after hovering and clicking eye icon.");
                     } else {
                         test.fail("Password visibility toggle failed.");
                     }
                 } catch (Exception e) {
-                    test.warning("Eye icon not found or failed to click: " + e.getMessage());
+                    test.warning("Eye icon issue: " + e.getMessage());
                 }
             }
 
@@ -80,13 +88,13 @@ public class LoginScenarios extends TestBasetp {
                         WebElement otpBox = driver.findElement(By.xpath("//ng-otp-input/div/input[" + j + "]"));
                         otpBox.sendKeys(arrtOTP_CoDash[j - 1]);
                     }
-                    test.pass("OTP entered successfully for valid login");
+                    test.pass("OTP entered successfully");
 
                     Thread.sleep(3000);
                     if (!driver.getCurrentUrl().contains("auth/login")) {
                         test.pass("Redirected to dashboard after OTP");
                     } else {
-                        test.fail("Failed to redirect after OTP");
+                        test.fail("OTP accepted but not redirected");
                     }
                 } else {
                     test.fail("Did not reach OTP screen");
