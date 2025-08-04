@@ -13,6 +13,7 @@ public class BranchPage {
         this.wait = wait;
     }
 
+    // Login Elements
     public WebElement emailField() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("username")));
     }
@@ -25,31 +26,45 @@ public class BranchPage {
         return driver.findElement(By.cssSelector("button.btn.btn-primary"));
     }
 
-    public WebElement branchesLink() {
-        return wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//a[contains(@href,'/super-admin/branches')]")));
+    // Navigation Link: Internal Users
+    public WebElement internalUsersLink() {
+        return wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a.nav-trigger[routerlink='/super-admin/admins']")));
     }
 
+    // Add New Button
     public WebElement addNewButton() {
-        return wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//a[contains(text(),'Add New')]")));
+        return wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a.btn.btn-primary.pull-right")));
     }
 
+    // Form Fields
     public WebElement nameInputField() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//input[@name='name']")));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("name")));
     }
 
-    public WebElement locationInputField() {
-        return driver.findElement(By.id("search-box-add"));
+    public WebElement emailInputField() {
+        return driver.findElement(By.name("email"));
     }
 
-    public WebElement statusDropdown() {
-        return wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//select[contains(@class,'form-control')]")));
+    public WebElement phoneInputField() {
+        return driver.findElement(By.name("phone"));
     }
 
-    public WebElement saveButton() {
-        return driver.findElement(By.xpath("//button[text()='Save']"));
+    public WebElement passwordInputField() {
+        return driver.findElement(By.name("password"));
+    }
+
+    // Gender Dropdown (Male/Female)
+    public WebElement genderDropdown() {
+        return driver.findElements(By.cssSelector("select.form-control")).get(0); // first dropdown
+    }
+
+    // Role Dropdown (Admin/Coordinator)
+    public WebElement roleDropdown() {
+        return driver.findElements(By.cssSelector("select.form-control")).get(1); // second dropdown
+    }
+
+    // Submit Button
+    public WebElement addUserSubmitButton() {
+        return driver.findElement(By.cssSelector("button.btn.btn-primary[type='submit']"));
     }
 }

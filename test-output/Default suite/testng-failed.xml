@@ -5,9 +5,10 @@
     <classes>
       <class name="TestPackage.EcommerceCheckFlow">
         <methods>
-          <include name="testBranchCreationScenarios"/>
           <include name="setup"/>
           <include name="tearDown"/>
+          <include name="testLoginScenarios"/>
+          <include name="testInternalUserScenarios"/>
         </methods>
       </class> <!-- TestPackage.EcommerceCheckFlow -->
     </classes>

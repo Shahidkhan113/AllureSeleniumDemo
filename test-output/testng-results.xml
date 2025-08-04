@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-14T17:24:19 PKT" name="Default suite" finished-at="2025-07-14T17:25:38 PKT" duration-ms="79247">
+  <suite started-at="2025-08-04T10:15:35 PKT" name="Default suite" finished-at="2025-08-04T10:17:42 PKT" duration-ms="127329">
     <groups>
     </groups>
-    <test started-at="2025-07-14T17:24:19 PKT" name="Default test" finished-at="2025-07-14T17:25:38 PKT" duration-ms="79247">
+    <test started-at="2025-08-04T10:15:35 PKT" name="Default test" finished-at="2025-08-04T10:17:42 PKT" duration-ms="127329">
       <class name="TestPackage.EcommerceCheckFlow">
-        <test-method is-config="true" signature="setup()[pri:0, instance:TestPackage.EcommerceCheckFlow@1224144a]" started-at="2025-07-14T17:24:19 PKT" name="setup" finished-at="2025-07-14T17:24:46 PKT" duration-ms="27332" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestPackage.EcommerceCheckFlow@17503f6b]" started-at="2025-08-04T10:15:35 PKT" name="setup" finished-at="2025-08-04T10:16:40 PKT" duration-ms="64821" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testLoginScenarios()[pri:1, instance:TestPackage.EcommerceCheckFlow@1224144a]" started-at="2025-07-14T17:24:46 PKT" name="testLoginScenarios" finished-at="2025-07-14T17:25:21 PKT" duration-ms="34599" status="PASS">
+        <test-method signature="testLoginScenarios()[pri:1, instance:TestPackage.EcommerceCheckFlow@17503f6b]" started-at="2025-08-04T10:16:40 PKT" name="testLoginScenarios" finished-at="2025-08-04T10:17:08 PKT" duration-ms="28463" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginScenarios -->
-        <test-method signature="testBranchCreationScenarios()[pri:2, instance:TestPackage.EcommerceCheckFlow@1224144a]" started-at="2025-07-14T17:25:21 PKT" name="testBranchCreationScenarios" finished-at="2025-07-14T17:25:37 PKT" duration-ms="16096" status="PASS">
+        <test-method signature="testInternalUserScenarios()[pri:2, instance:TestPackage.EcommerceCheckFlow@17503f6b]" started-at="2025-08-04T10:17:08 PKT" name="testInternalUserScenarios" finished-at="2025-08-04T10:17:41 PKT" depends-on-methods="TestPackage.EcommerceCheckFlow.testLoginScenarios" duration-ms="32904" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testBranchCreationScenarios -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestPackage.EcommerceCheckFlow@1224144a]" started-at="2025-07-14T17:25:37 PKT" name="tearDown" finished-at="2025-07-14T17:25:38 PKT" duration-ms="900" status="PASS">
+        </test-method> <!-- testInternalUserScenarios -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestPackage.EcommerceCheckFlow@17503f6b]" started-at="2025-08-04T10:17:41 PKT" name="tearDown" finished-at="2025-08-04T10:17:42 PKT" duration-ms="767" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
